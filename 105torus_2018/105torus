@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+##
+## EPITECH PROJECT, 2018
+## Maths
+## File description:
+## 105torus
+##
+
+import sys
+import os
+import math as m
+from my_display import *
+from my_calc import *
+
+class Coeiff:
+    a0 = int
+    a1 = int
+    a2 = int
+    a3 = int
+    a4 = int
+
+def my_choose(opt, CF, n):
+    if opt == 1:
+        my_bisection(CF, n)
+    elif opt == 2:
+        my_newton(CF, n)
+    elif opt == 3:
+        my_secant(CF, n)
+
+def main():
+    my_check_arg()
+    CF = Coeiff
+    opt = int(sys.argv[1])
+    CF.a0 = int(sys.argv[2])
+    CF.a1 = int(sys.argv[3])
+    CF.a2 = int(sys.argv[4])
+    CF.a3 = int(sys.argv[5])
+    CF.a4 = int(sys.argv[6])
+    n = int(sys.argv[7])
+    my_choose(opt, CF, n)
+    sys.exit(0)
+main()
